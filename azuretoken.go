@@ -119,3 +119,25 @@ func (t Token) GetGraphToken(graphClient GraphClient) GraphToken {
 	json.Unmarshal(body, &tmpToken)
 	return (GraphToken{AccessToken: tmpToken.AccessToken, TokenType: tmpToken.TokenType, Resource: tmpToken.Resource, ExpiresOn: time.Unix(tmpToken.ExpiresOn, 0), NotBefore: time.Unix(tmpToken.NotBefore, 0)})
 }
+
+/*
+func main() {
+	applicationid := os.Getenv("AZAPPLICATIONID")
+	resource := os.Getenv("AZRESOURCE")
+	tenantid := os.Getenv("AZTENANT")
+	tokenurl := os.Getenv("AZTOKENURL")
+	secret := os.Getenv("AZSECRET")
+
+	// get azure api token
+	var token Token
+	url := fmt.Sprintf(tokenurl, tenantid)
+	requestBody := strings.NewReader(fmt.Sprintf("grant_type=client_credentials&client_id=%v&client_secret=%v&resource=%v", applicationid, secret, resource))
+	t := token.GetToken(requestBody, url)
+	fmt.Println(t)
+
+	// get azure graph token
+	graphClient := GraphClient{TenantID: tenantid, ApplicationID: applicationid, ClientSecret: secret}
+	gtoken := token.GetGraphToken(graphClient)
+	fmt.Println(gtoken.AccessToken)
+}
+*/
