@@ -1,2 +1,2 @@
 # azuretoken
-Request Azure API and Graph tokens in Go
+Go module with functions to request Azure API and Graph tokens.
