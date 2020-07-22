@@ -47,7 +47,7 @@ func (t Token) GetToken(r *strings.Reader, url string) string {
 		log.Println(err)
 	}
 
-	// Send req using http Client
+	// Send request using http Client
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
@@ -57,7 +57,6 @@ func (t Token) GetToken(r *strings.Reader, url string) string {
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
-	//fmt.Println(string([]byte(body)))
 	if err != nil {
 		log.Println(err)
 	}
@@ -67,7 +66,7 @@ func (t Token) GetToken(r *strings.Reader, url string) string {
 	if err != nil {
 		log.Println(err)
 	}
-	//fmt.Println(token.Accesstoken)
+
 	return token.Accesstoken
 
 }
