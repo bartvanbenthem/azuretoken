@@ -120,6 +120,7 @@ func (t Token) GetGraphToken(graphClient GraphClient) GraphToken {
 }
 
 /*
+// EXAMPLE
 func main() {
 	applicationid := os.Getenv("AZAPPLICATIONID")
 	resource := os.Getenv("AZRESOURCE")
